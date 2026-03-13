@@ -1,0 +1,79 @@
+---
+
+- id: no-debug-inline-comments
+  name: Check for inline DEBUG comments
+  description: 'Enforce that no inline `DEBUG` comments are left in code being pushed.'
+  entry: |-
+      (?:(?:#|//)[ \t]*FIXME[^\n\r]*|(?:"""|'''|/\*)[ \t]*DEBUG[^\n\r]*(?:"""|'''|\*/))
+  language: pygrep
+  stages:
+      - push
+      - manual
+  types: 
+    - text
+
+- id: no-fixme-inline-comments
+  name: Check for inline FIXME comments
+  description: 'Enforce that no inline `FIXME` comments are left in code being pushed.'
+  entry: |-
+      (?:(?:#|//)[ \t]*FIXME[^\n\r]*|(?:"""|'''|/\*)[ \t]*FIXME[^\n\r]*(?:"""|'''|\*/))
+  language: pygrep
+  stages:
+      - push
+      - manual
+  types: 
+    - text
+
+- id: no-testing-inline-comments
+  name: Check for inline TESTING or TEST comments
+  description: 'Enforce that no inline `TESTING` or `TEST` comments are left in code being pushed.'
+  entry: |-
+      (?:(?:#|//)[ \t]*TEST[^\n\r]*|(?:"""|'''|/\*)[ \t]*TEST[^\n\r]*(?:"""|'''|\*/))
+  language: pygrep
+  stages:
+      - push
+      - manual
+  types: 
+    - text
+
+- id: no-debug-block-comments
+  name: Check for block DEBUG comments
+  description: 'Enforce that no `DEBUG` block comments are left in code being pushed.'
+  args:
+      - '--multiline'
+  entry: |-
+      (?:(?:"""|'''|/\*)(?:[ \t]*\*?[^\n\r]*\s+)*[ \t]*\*?[ \t]*DEBUG[^\n\r]*\s+(?:[ \t]*\*?[^\n\r]*\s+)*(?:"""|'''|\\*/)|#+[ \t]*DEBUG[^\n\r]*[\n\r][ \t]*#)
+  language: pygrep
+  stages:
+      - push
+      - manual
+  types: 
+    - text
+
+- id: no-fixme-block-comments
+  name: Check for block FIXME comments
+  description: 'Enforce that no `FIXME` block comments are left in code being pushed.'
+  args:
+      - '--multiline'
+  entry: |-
+      (?:(?:"""|'''|/\*)(?:[ \t]*\*?[^\n\r]*\s+)*[ \t]*\*?[ \t]*FIXME[^\n\r]*\s+(?:[ \t]*\*?[^\n\r]*\s+)*(?:"""|'''|\\*/)|#+[ \t]*FIXME[^\n\r]*[\n\r][ \t]*#)
+  language: pygrep
+  stages:
+      - push
+      - manual
+  types: 
+    - text
+
+- id: no-testing-block-comments
+  name: Check for block TESTING or TEST comments
+  description: 'Enforce that no `TESTING` or `TEST` block comments are left in code being pushed.'
+  args:
+      - '--multiline'
+  entry: |-
+      (?:(?:"""|'''|/\*)(?:[ \t]*\*?[^\n\r]*\s+)*[ \t]*\*?[ \t]*TEST[^\n\r]*\s+(?:[ \t]*\*?[^\n\r]*\s+)*(?:"""|'''|\\*/)|#+[ \t]*TEST[^\n\r]*[\n\r][ \t]*#)
+  language: pygrep
+  stages:
+      - push
+      - manual
+  types: 
+    - text
