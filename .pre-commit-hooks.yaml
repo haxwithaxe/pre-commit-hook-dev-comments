@@ -10,7 +10,7 @@
       - pre-push
       - manual
   types: 
-    - text
+    - file
 
 - id: no-fixme-inline-comments
   name: Check for inline FIXME comments
@@ -22,7 +22,7 @@
       - pre-push
       - manual
   types: 
-    - text
+    - file
 
 - id: no-testing-inline-comments
   name: Check for inline TESTING or TEST comments
@@ -34,7 +34,7 @@
       - pre-push
       - manual
   types: 
-    - text
+    - file
 
 - id: no-debug-block-comments
   name: Check for block DEBUG comments
@@ -48,7 +48,7 @@
       - pre-push
       - manual
   types: 
-    - text
+    - file
 
 - id: no-fixme-block-comments
   name: Check for block FIXME comments
@@ -62,7 +62,7 @@
       - pre-push
       - manual
   types: 
-    - text
+    - file
 
 - id: no-testing-block-comments
   name: Check for block TESTING or TEST comments
@@ -76,4 +76,4 @@
       - pre-push
       - manual
   types: 
-    - text
+    - file
