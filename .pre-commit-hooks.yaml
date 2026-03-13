@@ -7,7 +7,7 @@
       (?:(?:#|//)[ \t]*FIXME[^\n\r]*|(?:"""|'''|/\*)[ \t]*DEBUG[^\n\r]*(?:"""|'''|\*/))
   language: pygrep
   stages:
-      - push
+      - pre-push
       - manual
   types: 
     - text
@@ -19,7 +19,7 @@
       (?:(?:#|//)[ \t]*FIXME[^\n\r]*|(?:"""|'''|/\*)[ \t]*FIXME[^\n\r]*(?:"""|'''|\*/))
   language: pygrep
   stages:
-      - push
+      - pre-push
       - manual
   types: 
     - text
@@ -31,7 +31,7 @@
       (?:(?:#|//)[ \t]*TEST[^\n\r]*|(?:"""|'''|/\*)[ \t]*TEST[^\n\r]*(?:"""|'''|\*/))
   language: pygrep
   stages:
-      - push
+      - pre-push
       - manual
   types: 
     - text
@@ -45,7 +45,7 @@
       (?:(?:"""|'''|/\*)(?:[ \t]*\*?[^\n\r]*\s+)*[ \t]*\*?[ \t]*DEBUG[^\n\r]*\s+(?:[ \t]*\*?[^\n\r]*\s+)*(?:"""|'''|\\*/)|#+[ \t]*DEBUG[^\n\r]*[\n\r][ \t]*#)
   language: pygrep
   stages:
-      - push
+      - pre-push
       - manual
   types: 
     - text
@@ -59,7 +59,7 @@
       (?:(?:"""|'''|/\*)(?:[ \t]*\*?[^\n\r]*\s+)*[ \t]*\*?[ \t]*FIXME[^\n\r]*\s+(?:[ \t]*\*?[^\n\r]*\s+)*(?:"""|'''|\\*/)|#+[ \t]*FIXME[^\n\r]*[\n\r][ \t]*#)
   language: pygrep
   stages:
-      - push
+      - pre-push
       - manual
   types: 
     - text
@@ -73,7 +73,7 @@
       (?:(?:"""|'''|/\*)(?:[ \t]*\*?[^\n\r]*\s+)*[ \t]*\*?[ \t]*TEST[^\n\r]*\s+(?:[ \t]*\*?[^\n\r]*\s+)*(?:"""|'''|\\*/)|#+[ \t]*TEST[^\n\r]*[\n\r][ \t]*#)
   language: pygrep
   stages:
-      - push
+      - pre-push
       - manual
   types: 
     - text
